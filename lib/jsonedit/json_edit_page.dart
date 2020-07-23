@@ -8,19 +8,18 @@ class JsonEditorPage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _JsonEditorPageState(jsonString);
+    return _JsonEditorPageState();
   }
 }
 
 class _JsonEditorPageState extends State<JsonEditorPage> {
   TextEditingController _controller = TextEditingController();
-  String jsonStr;
-  _JsonEditorPageState(this.jsonStr);
+
   @override
   void initState() {
     super.initState();
     //TextField赋初始值
-    _controller.text = JsonFormatUtil.formatJson(jsonStr);
+    _controller.text = JsonFormatUtil.formatJson(widget.jsonString);
   }
 
   @override
